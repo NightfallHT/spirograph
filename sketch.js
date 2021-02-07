@@ -18,7 +18,7 @@ function setup() {
   
   // Dimensions
   R = 105 * 2;          //radius of the outside circle
-  r = 63 * 2;           //radius of the inside circle
+  r = 50 * 2;           //radius of the inside circle
   D = 2 * R;            //diameter of the outside circle
   d = 2 * r;            //diameter of the inside circle
   p = 60;               //distance of the pen
@@ -68,7 +68,7 @@ text(normalizedAngle, 10, 240)
   
     // Is mouse over object
     let m_dist = dist(mouseX, mouseY, x, y);
-    if (m_dist < r/2) {
+    if (m_dist < r) {
       rollover = true;
     } else {
       rollover = false;
@@ -78,14 +78,14 @@ text(normalizedAngle, 10, 240)
 
   stroke(0);
   
-    // Different fill based on state
-    // if (dragging) {
-    //   fill(50);
-    // } else if (rollover) {
-    //   fill(100);
-    // } else {
-    //   fill(175, 200);
-    // }
+    //Different fill based on state
+    if (dragging) {
+      fill(150);
+    } else if (rollover) {
+      fill(175);
+    } else {
+      fill(175, 200);
+    }
     
     ellipse(x, y, d);
     ellipse(xpen,ypen,10);
@@ -165,12 +165,4 @@ function mouseReleased() {
   // Quit dragging and rollover
   dragging = false;
   rollover = false;
-}
-
-function angleIncrease() {
-  if (normalizedAngle < mouseAngle){
-  for (let i = 0; normalizedAngle < mouseAngle; i++){
-    normalizedAngle += i/10000;
-  }
-  }
 }
