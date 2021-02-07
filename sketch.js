@@ -129,7 +129,7 @@ if (mouseX < width / 2){
     crossedDown = true;
   }
 }else{
-  if (direction == "down" && mouseY < windowHeight / 2 && crossedDown == false){
+  if (direction == "down" && mouseY > windowHeight / 2 && crossedDown == false){
      //counter--;
      crossedUp = false;
      crossedDown = true;
