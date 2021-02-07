@@ -18,7 +18,7 @@ function setup() {
   
   // Dimensions
   R = 105 * 2;          //radius of the outside circle
-  r = 50 * 2;           //radius of the inside circle
+  r = 80 * 2;           //radius of the inside circle
   D = 2 * R;            //diameter of the outside circle
   d = 2 * r;            //diameter of the inside circle
   p = 60;               //distance of the pen
@@ -117,6 +117,8 @@ function mouseMoved(){
 }
 
 function mouseDragged(){
+  window.addEventListener('mouseup', function(e) {dragging = false;
+    rollover = false;}, false);
   //COUNTER METHOD
 if (mouseX < width / 2){
   if (direction == "up" && mouseY < windowHeight / 2 && crossedUp == false){
@@ -159,10 +161,4 @@ if (mouseX < width / 2){
   xpen = R * ((1 - k) * cos(penAngle) + (l * k * cos(((1-k) / k) * penAngle))) + (width) / 2
   ypen = R * ((1 - k) * sin(penAngle) - (l * k * sin(((1-k) / k) * penAngle))) + (height) / 2
   }
-}
-
-function mouseReleased() {
-  // Quit dragging and rollover
-  dragging = false;
-  rollover = false;
 }
