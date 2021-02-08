@@ -42,7 +42,7 @@ function setup() {
 
   
 
-  direction = "";                  //which  direction is the mouse moving
+  direction = "";                  //which direction is the mouse moving
   oldy = 0;
   oldx = 0;
 }
